@@ -64,7 +64,7 @@ height:3rem;
 font-size:1.5rem;
 border:0;
 }
-.btn.btn-back:hover{ /* comportamento do mouse quando o cursor estiver por cima */
+.btn.btn-back:hover{ /* comportamento do botão quando o cursor estiver por cima */
 border:0 !important;
 }
 
