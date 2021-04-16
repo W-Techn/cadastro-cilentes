@@ -25,10 +25,10 @@ if ($cpfAtestar->segundodigitoehValido() == true) {
         $_SESSION['msg'] = "<p style='color:green; font-size:1.1rem;'>Usuário cadastrado com sucesso</p>"; //se ID foi somado, será imprimido uma confirmação ma nova seção de cadastro que será aberta
         header("Location: index.php"); //na página de cadastro;
     } else { //caso isso não se verifique,
-        $_SESSION['msg2'] = "<p style='color:#ff0000; font-size:1.1rem;'>*Este CPF já foi cadastrado</p>"; //a nova sessão imprimira euma mensagem de erro em vermelho, dizendo que esse CPF passado já se encontra na tabela. 
+        $_SESSION['msg2'] = "<p style='color:#ff0000; font-size:1.1rem;'>*Este CPF já foi cadastrado</p>"; //a nova sessão imprimira uma mensagem de erro em vermelho, dizendo que esse CPF passado já se encontra na tabela. 
         header("Location: index.php"); //Só pode ser esse o erro, pois se não o front-end já teria retido a informação passada erroneamente para esta interface;
     }
-} else { //se a o segundo dígito na passar na verificação,
+} else { //se a o segundo dígito não passar na verificação,
     $_SESSION['msg2'] = "<p style='color:#ff0000; font-size:1.1rem;'>*Este CPF não existe!</p>"; //significa que ele não existe, e é isso que nós passaremos a imprimir na nova seção que será aberta, no redirecionamento que haverá
     header("Location: index.php"); //para a página Index;
 }
