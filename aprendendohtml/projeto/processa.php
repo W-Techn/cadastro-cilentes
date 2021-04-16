@@ -2,7 +2,7 @@
 //aqui será feita a conexão entre o client-side e o server-side;
 session_start();
 
-include 'CPFcontroller.php';
+include 'CPFconn.php';
 include 'conexao.php';
 //o conteúdo de cada lacuna preenchida deverá ser armazenada em uma variável. Para isso, deverá ser usada a função filter_input, que recebe como parâmetro:
     $nome = filter_input(INPUT_POST, 'nome', FILTER_SANITIZE_STRING); //o tipo de método que nós usamos na requisição, que no nosso caso foi o método POST,
