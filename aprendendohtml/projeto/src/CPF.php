@@ -6,7 +6,7 @@
 
         public function __construct(array $cpf) //método mágico que constrói o objeto recebendo um array
         {;
-            $this->cpf = $cpf; //depois que passado um array como parâmetro, para o atributo da classe
+            $this->cpf = $cpf; //depois que passado um array como parâmetro, este é passado para o atributo da classe
         }
 
         public function primeirodigitoehValido() //depois que o objeto é criado, esta função deve ser chamada para verificar
