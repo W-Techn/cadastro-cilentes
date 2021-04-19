@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.0
+-- version 5.0.4
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 15, 2021 at 06:00 PM
--- Server version: 10.5.8-MariaDB
--- PHP Version: 8.0.3
+-- Tempo de geração: 19-Abr-2021 às 15:32
+-- Versão do servidor: 10.4.17-MariaDB
+-- versão do PHP: 8.0.2
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,13 +18,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `cadastramento`
+-- Banco de dados: `cadastramento`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `clientes`
+-- Estrutura da tabela `clientes`
 --
 
 CREATE TABLE `clientes` (
@@ -37,18 +37,36 @@ CREATE TABLE `clientes` (
   `Bairro` varchar(230) NOT NULL,
   `Cidade` varchar(270) NOT NULL,
   `Zona` varchar(230) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Indexes for dumped tables
+-- Extraindo dados da tabela `clientes`
+--
+
+INSERT INTO `clientes` (`ID`, `Nome`, `CPF`, `Telefone`, `CEP`, `Endereço`, `Bairro`, `Cidade`, `Zona`) VALUES
+(1, 'Marconi Afonso L. S. Filho', '509970108-60', '113766-3808', '05335-120', 'Av Consolação', 'Jaguaré', 'Altinópolis', 'Centro'),
+(2, 'Selma P D', '037661508-71', '113766-3808', '05335-120', 'Rua Caetanópolis, 800', 'Jaguaré', 'Arapeí', 'Centro');
+
+--
+-- Índices para tabelas despejadas
 --
 
 --
--- Indexes for table `clientes`
+-- Índices para tabela `clientes`
 --
 ALTER TABLE `clientes`
   ADD PRIMARY KEY (`ID`),
   ADD UNIQUE KEY `CPF` (`CPF`);
+
+--
+-- AUTO_INCREMENT de tabelas despejadas
+--
+
+--
+-- AUTO_INCREMENT de tabela `clientes`
+--
+ALTER TABLE `clientes`
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
