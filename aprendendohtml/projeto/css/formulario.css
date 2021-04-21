@@ -1,0 +1,180 @@
+body{ /*layout geral de todo o site */
+	display:flex; 
+	height:100vh;
+	min-height:35rem;
+	align-items:center;
+	justify-content:center;
+	font-family:'Josefin Sans', sans-serif;
+}
+
+.card{ /* alguns padrões dos dois cards */
+position:absolute;
+top:50%;
+left:50%;
+width:100%;
+padding-top:1rem;
+padding-bottom:1rem;
+-webkit-transform:translate(-50%,-50%);
+transform:translate(-50%,-50%);
+}
+/* aqui será estilizado o efeito de transição dos cards quando chamado */
+.card-wrap{ /* aqui para o tamanho em telas maiores... */
+position:relative;
+margin:0 auto;
+}
+
+@media (min-width: 769px){ /* e aqui tratará para telas menores, como smartphones */
+
+.card-wrap{
+max-width:450px
+}
+}
+
+.card-body{ /* layout dos elementos dispostos dentro do card */
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
+text-align:center;
+}
+
+.card-body p{ /* tamanho da letra usado no corpo do card */
+font-size:1.1rem;
+}
+
+.card-title{ 
+font-weight:bold;
+font-size:1.8rem;
+}
+
+.btn{ /* personalização geral de botões */
+color:#fff !important;
+width:10em;
+transition:all .4s;
+border-radius:20px;
+border:2px solid transparent;
+}
+.btn.btn-back{ /* estilização do botão de voltar pro primeiro card */
+position:absolute;
+top:0;
+left:0;
+border-radius:0;
+width:3rem;
+height:3rem;
+font-size:1.5rem;
+border:0;
+}
+.btn.btn-back:hover{ /* comportamento do botão quando o cursor estiver por cima */
+border:0 !important;
+}
+
+.form-control{ /* estiliza o input  */
+font-family: 'Sura', serif;
+}
+
+.form-control::-webkit-input-placeholder{ /*o efeito do placeholder no input*/
+font-family: 'Sura', serif;
+letter-spacing:.1em;
+font-size:.9rem;
+}
+
+.form-control:-ms-input-placeholder{ /* o efeito do dado digitado no input*/
+font-family: 'Sura', serif;
+letter-spacing:.1em;
+font-size:.9rem;
+}
+
+.form-control::-ms-input-placeholder{
+font-family: 'Sura', serif;
+letter-spacing:.1em;
+font-size:.9rem;
+}
+
+.form-control::placeholder{ /* estiliza as letras que estão dentro do input */
+font-family:'Josefin Sans', sans-serif;
+letter-spacing:.1em;
+font-size:.9rem;
+}
+.card--welcome{ /* ordem d'emplilhamento do primeiro card */
+z-index:3;
+}
+
+.card--welcome .btn-wrap{ /* posicionamento do botão na página inicial */
+display:flex;
+flex-direction:column;
+}
+.card--welcome .btn{ /* estilo do botão */
+color:#fff;
+transition:all .3s;
+}
+.card--welcome .btn:hover{ /* estilo desse botão quando o cursor estiver por cima */
+background-color:rgba(238,156,167,.25);
+font-weight:bold;
+}
+.card--welcome .btn-register{ /* estilo do botão cadastrar*/
+margin-bottom:.8em;
+background-color:#bbbbbb;
+}
+.card--welcome .btn-register:hover{ /* estilo do botão cadastrar quando o cursor estiver por cima*/
+color:#bbbbbb;
+}
+
+.card--register .card-title{ /* cor do título do card de cadastro*/
+color:#bbbbbb;
+}
+.card--register .badge{ /* cor de fundo desse card */
+background-color:#bbbbbb;
+}
+.card--register .btn{ /* cor de fundo do botão REGISTRAR */ 
+background-color:#bbbbbb;
+}
+.card--register .btn:hover{ /* cor de fundo do botão REGISTRAR quando o cursor estiver por cima*/ 
+background-color:#fff;
+color:#bbbbbb !important;
+font-weight:bold;
+border:2px solid rgba(238,156,167,.25);
+}
+.card--register .btn:focus{ /* efeito de sombra do botão */ 
+box-shadow:0 0 0 0.2rem rgba(238,156,167,.25);
+}
+.card--register .form-control{ /* personalisação da caixa de input */ 
+color: #bbbbbb;
+border-color:rgba(238,156,167,.25);
+}
+.card--register .form-control:focus{ /* efeito de sombra do botão da caixa de input quando clicada */
+box-shadow:0 0 0 0.2rem rgba(238, 156, 167, 0.25);
+}
+
+/* personalizações gerais */
+body{
+background:linear-gradient(to right, #cccccc, #bbbbbb, #01291E, rgba(167,191,232,.25));
+background-size:500% 500%;
+transition:background 3s ease;
+background-position:50% 50%;
+}
+body.is-register{
+background-position:0% 50%;
+}
+body.is-login{
+background-position:100% 50%;
+}
+.card{
+transition:all .3s .1s ease-out;
+}
+.card:not(.is-show){ /* quando o card está inativo*/
+opacity:0;
+-webkit-transform:translate(-50%,-50%) rotateX(95deg);
+transform:translate(-50%,-50%) rotateX(95deg);
+}
+.card.is-show{ /* quando o card é chamado*/
+opacity:1;
+-webkit-transform:translate(-50%,-50%);
+transform:translate(-50%,-50%);
+z-index:5;
+}
+#logo { /*definições do logo da página inicial*/
+width: 67%;
+margin-bottom: 20px;
+
+}
+
