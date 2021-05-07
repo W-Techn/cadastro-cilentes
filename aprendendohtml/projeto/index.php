@@ -744,7 +744,10 @@ session_start(); //sessão iniciada;
 <button class="btn btn-back js-btn" data-target="welcome"><i class="fas fa-angle-left"></i></button> <!-- este botão servirá para o usuário voltar para o card anterior -->
 </div>
 </div>
-<script type="text/javascript">
+<script src="js/jquery.mask.min.js"></script>
+<script src="js/mascara.js"></script>
+<script> 
+
 const cards = document.querySelectorAll('.card'); //variável que trabalhará com todos os cards
 
 /* View Controller
@@ -776,8 +779,6 @@ cards.forEach((card) => { card.classList.remove('is-show'); });
 next.classList.add('is-show');
 }
 
-//máscaras nos inputs. Máscaras são formatações visuiais de como os dados inseridos pelo client-side deve se dispor;
-$("#CPF").mask("999.999.999-99"); //os dois números após o traço são so dígitos verificadores
 $("#CEP").mask("99999-999");
 $("#Telefone").mask("(99) 9999-9999");
 </script>
