@@ -43,7 +43,7 @@ session_start(); //sessão iniciada;
     <input class="form-control" name="nome" type="text" placeholder="Nome" required="required" autofocus/> <!-- input do formulário -->
   </div>
   <div class="form-group">
-    <input class="form-control" id="CPF" name="cpf" type="text" placeholder="seu CPF" required="required"/> <!-- o input nesse caso será acresentado dos pontos e traço que o CPF geralmente tem (máscara) -->
+    <input class="form-control" id="CPF" name="numero" type="text" placeholder="seu CPF/CNPJ" required="required"/> <!-- o input nesse caso será acresentado dos pontos e traço que o CPF geralmente tem (máscara) -->
   </div>
     <?php
     if(isset($_SESSION['msg2'])) { //aqui ira inserir/retirar as mensagens de confimação do CPF;
