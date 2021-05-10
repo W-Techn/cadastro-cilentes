@@ -780,7 +780,7 @@ next.classList.add('is-show');
 }
 
 $("#CEP").mask("99999-999");
-$("#Telefone").mask("(99) 9999-9999");
+$("#Telefone").mask("(99) 9999 9999");
 </script>
 </body>
 </html>
