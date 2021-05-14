@@ -17,18 +17,16 @@ include 'src/CPF.php';
     $cidade = filter_input(INPUT_POST, 'cidade', FILTER_SANITIZE_STRING);
     $zona = filter_input(INPUT_POST, 'zona', FILTER_SANITIZE_STRING);
 
-    $numeroFormatado = str_split($numero);
+    $list = str_split($numero);
     // var_dump($numeroFormatado);
     //         exit();
 
     
     $result_usuario = "INSERT INTO clientes (Nome, CPF, Endereço, CEP, Telefone, Cidade, Zona, Bairro) VALUES ('$nome', '$numero', '$endereco', '$cep', '$tel', '$cidade', '$zona', '$bairro')";
     //Isto aqui é uma variável que contem uma linguagem para se comunicar com o banco de dados e passar os valores filtrados em sua respectiva coluna;
-    switch (sizeof($numeroFormatado)) {
-        case 12:
-            unset($numeroFormatado[9]);
-            $numeroSemTraco = array_values($numeroFormatado);
-            $cpfAtestar = new CPF($numeroSemTraco);
+    switch (sizeof($list)) {
+        case 11:
+            $cpfAtestar = new CPF($list);
             if ($cpfAtestar->segundodigitoehValido() == true) {
 
                 $resultado_usuario = mysqli_query($conn, $result_usuario); //Se o CPF for válido, vamos executar a conexão - com o usuario, senha e nome do banco de dados definidos na variável $conn,
@@ -47,10 +45,8 @@ include 'src/CPF.php';
             
             break;
         
-        case 15:
-            unset($numeroFormatado[12]);
-            $numeroSemTraco = array_values($numeroFormatado);
-            $cnpjAtestar = new CNPJ($numeroSemTraco);
+        case 14:
+            $cnpjAtestar = new CNPJ($list);
             if ($cnpjAtestar->segundoDigitoCNPJehValido() == true) {
 
                 $resultado_usuario = mysqli_query($conn, $result_usuario); //Se o CPF for válido, vamos executar a conexão - com o usuario, senha e nome do banco de dados definidos na variável $conn,

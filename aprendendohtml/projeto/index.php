@@ -779,8 +779,8 @@ cards.forEach((card) => { card.classList.remove('is-show'); });
 next.classList.add('is-show');
 }
 
-$("#CEP").mask("99999-999");
-$("#Telefone").mask("(99) 9999 9999");
+$("#CEP").mask("99999–999");
+$("#Telefone").mask("(99) 9999–9999");
 </script>
 </body>
 </html>

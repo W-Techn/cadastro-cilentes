@@ -1,7 +1,7 @@
 $(document).ready(function(){
 
 var SPMaskBehavior = function (val) {
-return val.replace(/\D/g, '').length === 14 ? '00.000.000/0000-00' : '000.000.000-00999';
+return val.replace(/\D/g, '').length === 14 ? '00.000.000/0000–00' : '000.000.000–00999';
 },
 spOptions = {
 onKeyPress: function(val, e, field, options) {
