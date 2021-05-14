@@ -13,7 +13,7 @@ include 'src/CPF.php';
     $endereco = filter_input(INPUT_POST, 'endereco', FILTER_SANITIZE_STRING); //utilizamos também o 'name' que foi passado em cada tag input, e o filtro a ser
     $bairro = filter_input(INPUT_POST, 'bairro', FILTER_SANITIZE_STRING); //utilizado, com "_FLOAT" para remover todos os caracteres exceto dígitos, e "_STRING" para permitir 
     $cep = filter_input(INPUT_POST, 'cep', FILTER_SANITIZE_NUMBER_FLOAT); //apenas letras e alguns caracteres;
-    $tel = filter_input(INPUT_POST, 'tel', FILTER_SANITIZE_NUMBER_URL);
+    $tel = filter_input(INPUT_POST, 'tel', FILTER_SANITIZE_NUMBER_FLOAT);
     $cidade = filter_input(INPUT_POST, 'cidade', FILTER_SANITIZE_STRING);
     $zona = filter_input(INPUT_POST, 'zona', FILTER_SANITIZE_STRING);
 
