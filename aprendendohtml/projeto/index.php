@@ -43,7 +43,7 @@ session_start(); //sessão iniciada;
     <input class="form-control" name="nome" type="text" placeholder="Nome" required="required" autofocus/> <!-- input do formulário -->
   </div>
   <div class="form-group">
-    <input class="form-control" id="CPF" name="cpf" type="text" placeholder="seu CPF" required="required"/> <!-- o input nesse caso será acresentado dos pontos e traço que o CPF geralmente tem (máscara) -->
+    <input class="form-control" id="CPF" name="numero" type="text" placeholder="seu CPF/CNPJ" required="required"/> <!-- o input nesse caso será acresentado dos pontos e traço que o CPF geralmente tem (máscara) -->
   </div>
     <?php
     if(isset($_SESSION['msg2'])) { //aqui ira inserir/retirar as mensagens de confimação do CPF;
@@ -744,7 +744,10 @@ session_start(); //sessão iniciada;
 <button class="btn btn-back js-btn" data-target="welcome"><i class="fas fa-angle-left"></i></button> <!-- este botão servirá para o usuário voltar para o card anterior -->
 </div>
 </div>
-<script type="text/javascript">
+<script src="js/jquery.mask.min.js"></script>
+<script src="js/mascara.js"></script>
+<script> 
+
 const cards = document.querySelectorAll('.card'); //variável que trabalhará com todos os cards
 
 /* View Controller
@@ -776,10 +779,8 @@ cards.forEach((card) => { card.classList.remove('is-show'); });
 next.classList.add('is-show');
 }
 
-//máscaras nos inputs. Máscaras são formatações visuiais de como os dados inseridos pelo client-side deve se dispor;
-$("#CPF").mask("999.999.999-99"); //os dois números após o traço são so dígitos verificadores
-$("#CEP").mask("99999-999");
-$("#Telefone").mask("(99) 9999-9999");
+$("#CEP").mask("99999–999");
+$("#Telefone").mask("(99) 9999–9999");
 </script>
 </body>
 </html>
