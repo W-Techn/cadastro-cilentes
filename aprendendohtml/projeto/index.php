@@ -745,6 +745,8 @@ session_start(); //sessão iniciada;
 </div>
 </div>
 <script src="js/jquery.mask.min.js"></script>
+<script src="js/buscaCEP.js"></script>
+<script src="js/validarCPF.js"></script>
 <script src="js/mascara.js"></script>
 <script> 
 
