@@ -8,6 +8,8 @@ session_start(); //sessão iniciada;
 <title>W Technology - Cadastro</title>
  <meta name="viewport" content="width=device-width, initial-scale=1"> <!-- configuraçãp de exibição da página para smartphone -->
 <link href="http://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet"> <!-- import do framework Bootstrap utilizado na personalização do site -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+
     <link rel="preconnect" href="https://fonts.gstatic.com"> <!-- import da fonte a ser utlizada -->
     <link href="https://fonts.googleapis.com/css2?family=Sura&display=swap" rel="stylesheet"> <!-- import fonte Sura -->
     <link rel="stylesheet" type="text/css" href="css/formulario.css"> <!-- estilização css da página -->
@@ -45,12 +47,7 @@ session_start(); //sessão iniciada;
   <div class="form-group">
     <input class="form-control" id="CPF" name="numero" type="text" placeholder="seu CPF/CNPJ" required="required"/> <!-- o input nesse caso será acresentado dos pontos e traço que o CPF geralmente tem (máscara) -->
   </div>
-    <?php
-    if(isset($_SESSION['msg2'])) { //aqui ira inserir/retirar as mensagens de confimação do CPF;
-        echo $_SESSION['msg2'];
-        unset($_SESSION['msg2']);
-    }
-    ?>
+  <p id="fail" style="color: red;font-size: 10px;margin-bottom: 20px;"> </p>
   <div class="form-group">
     <input class="form-control" id="Telefone" name="tel" type="text" placeholder="DDD + número" required="required"/>
   </div>

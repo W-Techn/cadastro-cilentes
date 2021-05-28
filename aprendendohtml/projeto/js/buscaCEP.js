@@ -9,10 +9,14 @@ inputCEP.addEventListener("input", function() {
         xhr.addEventListener("load", function() {
         var resposta = xhr.responseText;
         var dados = JSON.parse(resposta);
-        
-        document.querySelector('input[name=endereco]').value = dados.logradouro;
-        document.querySelector('input[name=bairro]').value = dados.bairro; 
-        document.querySelector('select[name=cidade]').value = dados.localidade; 
+
+        if (dados.localidade == undefined) {
+            console.log("CEP não encontrado");
+        } else {
+            document.querySelector('input[name=bairro]').value = dados.bairro; 
+            document.querySelector('select[name=cidade]').value = dados.localidade; 
+            document.querySelector('input[name=endereco]').value = dados.logradouro;
+        }
         
     })
     xhr.send();
