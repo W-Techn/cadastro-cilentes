@@ -735,9 +735,7 @@ session_start(); //sessão iniciada;
   <option value="Zona Sul">Zona Sul</option>
 </select>
 </div>
-<!-- <div id='register'> -->
-  <button class="btn btn-lg">REGISTRAR</button> <!-- botão que fara o registro e enviará os dados inseridos para processa.php -->
-  <!-- </div> -->
+  <button class="btn btn-lg" id="reg">REGISTRAR</button> <!-- botão que fara o registro e enviará os dados inseridos para processa.php -->
 </form>
 </div>
 <button class="btn btn-back js-btn" data-target="welcome"><i class="fas fa-angle-left"></i></button> <!-- este botão servirá para o usuário voltar para o card anterior -->
