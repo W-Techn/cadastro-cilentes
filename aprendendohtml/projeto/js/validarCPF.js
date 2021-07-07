@@ -1,8 +1,6 @@
 //este arquivo de Javascript manipulará o CPF e o CNPJ inserido. 
 var inputNumero = document.querySelector('input[name=chave]');  //vamos selecionar os campos
-// var campoNumero = document.querySelector('input#CPF.form-ctrl'); //os inputs
 var msg = document.querySelector('#fail'); //as mensagens d'erro
-var msg2 = document.querySelector('#fail2');
 //para nós criarmos funções que irão responder a esses eventos
 function validaCPF(lista) { //essa função ira validar o CPF, receberá uma lista como parâmetro
     let toAdd = []; //aqui temos uma lista que irá adicionar e somar valores
