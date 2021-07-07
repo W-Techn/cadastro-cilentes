@@ -44,8 +44,8 @@ session_start(); //sessão iniciada;
   <div class="form-group"> <!-- classe layout de divisão do formulário -->
     <input class="form-control" name="nome" type="text" placeholder="Nome" required="required" autofocus/> <!-- input do formulário -->
   </div>
-  <div class="form-group">
-    <input class="form-control" id="CPF" name="numero" type="text" placeholder="seu CPF/CNPJ" required="required"/> <!-- o input nesse caso será acresentado dos pontos e traço que o CPF geralmente tem (máscara) -->
+  <div class="form-group" id="field">
+    <input class="form-control" id="CPF" name="chave" type="text" placeholder="seu CPF/CNPJ" required="required"/> <!-- o input nesse caso será acresentado dos pontos e traço que o CPF geralmente tem (máscara) -->
   </div>
   <p id="fail" style="color: red;font-size: 10px;margin-bottom: 20px;"> </p>
   <div class="form-group">
@@ -735,7 +735,9 @@ session_start(); //sessão iniciada;
   <option value="Zona Sul">Zona Sul</option>
 </select>
 </div>
+<!-- <div id='register'> -->
   <button class="btn btn-lg">REGISTRAR</button> <!-- botão que fara o registro e enviará os dados inseridos para processa.php -->
+  <!-- </div> -->
 </form>
 </div>
 <button class="btn btn-back js-btn" data-target="welcome"><i class="fas fa-angle-left"></i></button> <!-- este botão servirá para o usuário voltar para o card anterior -->

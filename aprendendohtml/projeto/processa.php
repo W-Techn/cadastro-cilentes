@@ -3,13 +3,11 @@
 session_start();
 
 include 'conexao.php';
-include 'src/CNPJ.php';
-include 'src/CPF.php';
 
 //o conteúdo de cada lacuna preenchida deverá ser armazenada em uma variável. Para isso, deverá ser usada a função filter_input, que recebe como parâmetro:
     
     $nome = filter_input(INPUT_POST, 'nome', FILTER_SANITIZE_STRING); //o tipo de método que nós usamos na requisição, que no nosso caso foi o método POST,
-    $numero = filter_input(INPUT_POST, 'numero', FILTER_SANITIZE_NUMBER_FLOAT);
+    $numero = filter_input(INPUT_POST, 'chave', FILTER_SANITIZE_NUMBER_FLOAT);
     $endereco = filter_input(INPUT_POST, 'endereco', FILTER_SANITIZE_STRING); //utilizamos também o 'name' que foi passado em cada tag input, e o filtro a ser
     $bairro = filter_input(INPUT_POST, 'bairro', FILTER_SANITIZE_STRING); //utilizado, com "_FLOAT" para remover todos os caracteres exceto dígitos, e "_STRING" para permitir 
     $cep = filter_input(INPUT_POST, 'cep', FILTER_SANITIZE_NUMBER_FLOAT); //apenas letras e alguns caracteres;
