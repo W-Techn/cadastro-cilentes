@@ -1,9 +1,6 @@
 //este arquivo de Javascript manipulará o CPF e o CNPJ inserido. 
 var inputNumero = document.querySelector('input[name=chave]');  //vamos selecionar os campos
-var campoNumero = document.querySelector('input#CPF.form-ctrl'); //os inputs
 var msg = document.querySelector('#fail'); //as mensagens d'erro
-var msg2 = document.querySelector('#fail2');
-var submit = document.querySelector('input#botao'); // e o botão de submit
 //para nós criarmos funções que irão responder a esses eventos
 function validaCPF(lista) { //essa função ira validar o CPF, receberá uma lista como parâmetro
     let toAdd = []; //aqui temos uma lista que irá adicionar e somar valores
@@ -73,34 +70,33 @@ inputNumero.addEventListener("input", function() { // agora vamos adicionar um e
             case 11: //pelo tamanho da lista
                 var validCpf = validaCPF(lista); //se trata de um CPF 
                 if (validCpf == true) { //e aí nós chamaremos a função que valida, e caso passe
-                    campoNumero.style.borderColor = "#474746"; //pegaremos o campo de iput e alteraremos a tua cor para a cor padrão, para simular o efieto de aprovação para quem está acessando
+                    inputNumero.style.borderColor = "rgba(238,156,167,.25)"; //pegaremos o input de iput e alteraremos a tua cor para a cor padrão, para simular o efieto de aprovação para quem está acessando
                     msg.textContent = ""; //removeremos a mensagem d'erro
-                    botao.classList.remove("disabled"); // e habilitaremos o botão de confirmar
+                     // e habilitaremos o botão de confirmar
                 } else { //se não for válido,
-                    campoNumero.style.borderColor = "darkred"; //destacaremos a borda do input de vermelho 
+                    inputNumero.style.borderColor = "darkred"; //destacaremos a borda do input de vermelho 
                     msg.style.color = "darkred"; //bem como a mensagem de,
                     msg.textContent = "*valor de CPF inválido"; //a mensagem de confirmação,
-                    msg2.textContent = ""; //apagamos a mensagem de alerta de CNPJ (será implementado posteriormente)
-                    botao.classList.add("disabled"); //e desabilitamos o botão de confirmação
+                     //e desabilitamos o botão de confirmação
                 }
             break;
             case 14: //ou CNPJ,
                var validCnpj = validaCNPJ(lista); //onde chamaremos sua função de validação e repetiremos a exemplo do CPF
                if (validCnpj == true) {
-                campoNumero.style.borderColor = "#474746";
+                inputNumero.style.borderColor = "rgba(238,156,167,.25)";
                 msg.textContent = "";
-                botao.classList.remove("disabled");
+                
                 } else {
-                campoNumero.style.borderColor = "darkred";
+                inputNumero.style.borderColor = "darkred";
                 msg.style.color = "darkred";
                 msg.textContent = "*valor de CNPJ inválido";
-                botao.classList.add("disabled");
+                // 
                 }
                 break;
-            default: //de maneira padrão, ou seja, quando o número de digitos inseridos no campo não indicar nem CPF ou CNPJ, essa região do formulário ficará desse estilo 
-                campoNumero.style.borderColor = "#474746"; 
+            default: //de maneira padrão, ou seja, quando o número de digitos inseridos no input não indicar nem CPF ou CNPJ, essa região do formulário ficará desse estilo 
+                inputNumero.style.borderColor = "rgba(238,156,167,.25)"; 
                 msg.textContent = "";
-                botao.classList.remove("disabled");
+                
                 break;
         }
     } 
