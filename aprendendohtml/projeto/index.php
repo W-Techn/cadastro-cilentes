@@ -42,12 +42,13 @@ session_start(); //sessão iniciada;
 
 <form action="processa.php" method="post"> <!-- essa tag inicia o formulário, usaremos o método post para mandar os dados inseridos para a interface cliente-servidor no arquivo Processa.php -->
   <div class="form-group"> <!-- classe layout de divisão do formulário -->
-    <input class="form-control" name="nome" type="text" placeholder="Nome" required="required" autofocus/> <!-- input do formulário -->
+    <input class="form-control" name="nome" type="text" placeholder="Nome completo" required="required" autofocus/> <!-- input do formulário -->
   </div>
-  <div class="form-group" id="field">
+  <p id="too-short" class="alert"> </p>
+  <div class="form-group">
     <input class="form-control" id="CPF" name="chave" type="text" placeholder="seu CPF/CNPJ" required="required"/> <!-- o input nesse caso será acresentado dos pontos e traço que o CPF geralmente tem (máscara) -->
   </div>
-  <p id="fail" style="color: red;font-size: 10px;margin-bottom: 20px;"> </p>
+  <p id="fail" class="alert"> </p>
   <div class="form-group">
     <input class="form-control" id="Telefone" name="tel" type="text" placeholder="DDD + número" required="required"/>
   </div>
@@ -741,9 +742,11 @@ session_start(); //sessão iniciada;
 <button class="btn btn-back js-btn" data-target="welcome"><i class="fas fa-angle-left"></i></button> <!-- este botão servirá para o usuário voltar para o card anterior -->
 </div>
 </div>
+<script src="js/jquery.js"></script>
 <script src="js/jquery.mask.min.js"></script>
 <script src="js/buscaCEP.js"></script>
 <script src="js/validarCPF.js"></script>
+<script src="js/validaNome.js"></script>
 <script src="js/mascara.js"></script>
 <script> 
 
@@ -780,6 +783,7 @@ next.classList.add('is-show');
 
 $("#CEP").mask("99999–999");
 $("#Telefone").mask("(99) 9999–9999");
+
 </script>
 </body>
 </html>
