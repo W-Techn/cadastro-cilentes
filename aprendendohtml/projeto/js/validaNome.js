@@ -1,5 +1,5 @@
 var inputName = document.querySelector('input[name=nome]');
-var msg2 = $('#too-short');
+var msg2 = document.querySelector('#too-short');
 
 inputNumero.addEventListener("focus", function () {
     if (inputName.value.length < 12) {
