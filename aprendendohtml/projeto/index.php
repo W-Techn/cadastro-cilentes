@@ -8,6 +8,8 @@ session_start(); //sessão iniciada;
 <title>W Technology - Cadastro</title>
  <meta name="viewport" content="width=device-width, initial-scale=1"> <!-- configuraçãp de exibição da página para smartphone -->
 <link href="http://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet"> <!-- import do framework Bootstrap utilizado na personalização do site -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+
     <link rel="preconnect" href="https://fonts.gstatic.com"> <!-- import da fonte a ser utlizada -->
     <link href="https://fonts.googleapis.com/css2?family=Sura&display=swap" rel="stylesheet"> <!-- import fonte Sura -->
     <link rel="stylesheet" type="text/css" href="css/formulario.css"> <!-- estilização css da página -->
@@ -40,17 +42,13 @@ session_start(); //sessão iniciada;
 
 <form action="processa.php" method="post"> <!-- essa tag inicia o formulário, usaremos o método post para mandar os dados inseridos para a interface cliente-servidor no arquivo Processa.php -->
   <div class="form-group"> <!-- classe layout de divisão do formulário -->
-    <input class="form-control" name="nome" type="text" placeholder="Nome" required="required" autofocus/> <!-- input do formulário -->
+    <input class="form-control" name="nome" type="text" placeholder="Nome completo" required="required" autofocus/> <!-- input do formulário -->
   </div>
+  <p id="too-short" class="alert"> </p>
   <div class="form-group">
-    <input class="form-control" id="CPF" name="numero" type="text" placeholder="seu CPF/CNPJ" required="required"/> <!-- o input nesse caso será acresentado dos pontos e traço que o CPF geralmente tem (máscara) -->
+    <input class="form-control" id="CPF" name="chave" type="text" placeholder="seu CPF/CNPJ" required="required"/> <!-- o input nesse caso será acresentado dos pontos e traço que o CPF geralmente tem (máscara) -->
   </div>
-    <?php
-    if(isset($_SESSION['msg2'])) { //aqui ira inserir/retirar as mensagens de confimação do CPF;
-        echo $_SESSION['msg2'];
-        unset($_SESSION['msg2']);
-    }
-    ?>
+  <p id="fail" class="alert"> </p>
   <div class="form-group">
     <input class="form-control" id="Telefone" name="tel" type="text" placeholder="DDD + número" required="required"/>
   </div>
@@ -738,13 +736,17 @@ session_start(); //sessão iniciada;
   <option value="Zona Sul">Zona Sul</option>
 </select>
 </div>
-  <button class="btn btn-lg">REGISTRAR</button> <!-- botão que fara o registro e enviará os dados inseridos para processa.php -->
+  <button class="btn btn-lg" id="reg">REGISTRAR</button> <!-- botão que fara o registro e enviará os dados inseridos para processa.php -->
 </form>
 </div>
 <button class="btn btn-back js-btn" data-target="welcome"><i class="fas fa-angle-left"></i></button> <!-- este botão servirá para o usuário voltar para o card anterior -->
 </div>
 </div>
+<script src="js/jquery.js"></script>
 <script src="js/jquery.mask.min.js"></script>
+<script src="js/buscaCEP.js"></script>
+<script src="js/validarCPF.js"></script>
+<script src="js/validaNome.js"></script>
 <script src="js/mascara.js"></script>
 <script> 
 
@@ -781,6 +783,7 @@ next.classList.add('is-show');
 
 $("#CEP").mask("99999–999");
 $("#Telefone").mask("(99) 9999–9999");
+
 </script>
 </body>
 </html>
